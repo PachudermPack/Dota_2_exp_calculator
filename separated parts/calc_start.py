@@ -21,14 +21,16 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 def start_dif():
-    dif_script = resource_path("dota_2_dif_calc.py")
-    print(f"Запуск: {dif_script}")
-    subprocess.Popen([sys.executable, dif_script])
+    # Путь к исполняемому файлу Dota_2_dif_calc.exe
+    dif_exe = resource_path("dota_2_dif_calc.exe")
+    print(f"Запуск: {dif_exe}")  # Для отладки
+    subprocess.Popen([dif_exe])  # Запуск .exe файла
 
 def start_exp():
-    exp_script = resource_path("dota_2_exp_calc.py")
-    print(f"Запуск: {exp_script}")
-    subprocess.Popen([sys.executable, exp_script])
+    # Путь к исполняемому файлу Dota_2_exp_calc.exe
+    exp_exe = resource_path("dota_2_exp_calc.exe")
+    print(f"Запуск: {exp_exe}")  # Для отладки
+    subprocess.Popen([exp_exe])  # Запуск .exe файла
 
 # Создаем кнопки для запуска этих программ
 btn_dif = tk.Button(root, text="Калькулятор разности в опыте", bg='#2e2e2e', fg='ivory', command=start_dif, width=50, height=2)
