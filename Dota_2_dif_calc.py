@@ -16,7 +16,7 @@ def main():
 if __name__ == "__main__":
     main()
 
-def show_calculator():
+def show_calculator_dif():
     # Общие параметры для полей и кнопок
     entry_bg_color = '#1f1f1f'  # Цвет фона для полей ввода
     text_color = 'ivory'        # Цвет текста
@@ -48,7 +48,7 @@ def show_calculator():
     entry_exp2.insert(0,"0")
     entry_exp2.grid(row=3, column=1)
 
-    def calculate():
+    def calculate_dif():
         try:
             # Исходные данные
             lvl_str_1 = entry_level1.get()
@@ -130,7 +130,7 @@ def show_calculator():
         except ValueError as e:
             messagebox.showerror("Ошибка", str(e))
 
-    btn_calc = tk.Button(root,text="Рассчитать", command=calculate,bg=button_bg_color ,fg=text_color ,activebackground=button_bg_color ,activeforeground=text_color )
+    btn_calc = tk.Button(root,text="Рассчитать", command=calculate_dif,bg=button_bg_color ,fg=text_color ,activebackground=button_bg_color ,activeforeground=text_color )
     btn_calc.grid(row=4,columnspan=2,pady=10)
 
 # Изначально скрываем метки с результатами и разницей
@@ -139,6 +139,6 @@ label_result2.grid_remove()
 label_difference.grid_remove()
 
 # Вызываем сразу функцию отображения калькулятора без стартового меню
-show_calculator()
+show_calculator_dif()
 
 root.mainloop()
